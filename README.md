@@ -1,2 +1,2 @@
 # fresh-javaweb
-java web练手项目
+java 常用框架的一些练手项目
