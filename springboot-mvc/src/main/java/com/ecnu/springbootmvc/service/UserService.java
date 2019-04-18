@@ -12,5 +12,7 @@ public interface UserService {
 
     public String initUser(int age, String name, String city);
 
-    public User findAllUser();
+    public User getUser();
+
+    public String updateUser(int age, String name, String city);
 }

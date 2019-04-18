@@ -21,12 +21,19 @@ public class UserServiceImpl implements UserService {
         user.setAge(age);
         user.setName(name);
         user.setCity(city);
-
-        return "success";
+        return "sucess";
     }
 
     @Override
-    public User findAllUser() {
+    public User getUser() {
         return user;
+    }
+
+    @Override
+    public String updateUser(int age, String name, String city) {
+        user.setAge(age);
+        user.setName(name);
+        user.setCity(city);
+        return "sucess";
     }
 }
