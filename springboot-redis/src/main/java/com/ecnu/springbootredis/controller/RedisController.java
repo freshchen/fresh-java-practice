@@ -18,7 +18,23 @@ public class RedisController {
     private RedisUtil redisUtil;
 
     @RequestMapping("/redis/set/{key}/{value}")
-    public void set(@PathVariable String key,@PathVariable Object value){
-        redisUtil.set(key,value);
+    public String set(@PathVariable String key, @PathVariable Object value) {
+        return redisUtil.set(key, value);
     }
+
+    @RequestMapping("/redis/set/{key}/{value}/{time}")
+    public String set(@PathVariable String key, @PathVariable Object value, @PathVariable long time) {
+        return redisUtil.set(key, value, time);
+    }
+
+    @RequestMapping("/redis/get/{key}")
+    public Object get(@PathVariable String key) {
+        return redisUtil.get(key);
+    }
+
+    @RequestMapping("/redis/expire/get/{key}")
+    public Object getExpire(@PathVariable String key) {
+        return redisUtil.getExpire(key);
+    }
+
 }
