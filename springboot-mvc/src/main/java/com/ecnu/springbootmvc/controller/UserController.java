@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     @Autowired
-    UserService userService;
+    private UserService userService;
 
     @RequestMapping("/user/original/{age}/{name}/{city}")
     public String initUser(@PathVariable String age, @PathVariable String name, @PathVariable String city) {

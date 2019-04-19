@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
-    User user;
+    private User user;
 
     @Override
     public String initUser(int age, String name, String city) {
