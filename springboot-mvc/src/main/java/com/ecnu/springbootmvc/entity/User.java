@@ -1,5 +1,6 @@
 package com.ecnu.springbootmvc.entity;
 
+import org.hibernate.validator.constraints.Range;
 import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
@@ -12,6 +13,7 @@ import java.io.Serializable;
 @Component
 public class User implements Serializable {
 
+    @Range(min = 0,max = 150)
     private int age;
     private String name;
     private String city;
