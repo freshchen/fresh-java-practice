@@ -1,6 +1,6 @@
 package com.ecnu.springbootmvc.controller;
 
-import com.ecnu.springbootmvc.bean.User;
+import com.ecnu.springbootmvc.entity.User;
 import com.ecnu.springbootmvc.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;

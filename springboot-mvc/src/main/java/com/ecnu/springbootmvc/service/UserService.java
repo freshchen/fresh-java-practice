@@ -1,7 +1,6 @@
 package com.ecnu.springbootmvc.service;
 
-import com.ecnu.springbootmvc.bean.User;
-import org.json.JSONObject;
+import com.ecnu.springbootmvc.entity.User;
 
 /**
  * @anthor LingChen

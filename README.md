@@ -1,2 +1,2 @@
 # fresh-java-framework
-java 常用框架的一些练手项目
+JAVA 框架 练手 案例 持续更新中

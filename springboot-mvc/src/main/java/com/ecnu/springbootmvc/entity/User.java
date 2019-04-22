@@ -1,6 +1,5 @@
-package com.ecnu.springbootmvc.bean;
+package com.ecnu.springbootmvc.entity;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
