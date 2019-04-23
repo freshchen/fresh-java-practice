@@ -1,5 +1,7 @@
 package com.ecnu.springbootmvc.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.validator.constraints.Range;
 import org.springframework.stereotype.Component;
 
@@ -17,6 +19,10 @@ public class User implements Serializable {
     private int age;
     private String name;
     private String city;
+    @JsonProperty("password")
+    private String pwd;
+    @JsonIgnore
+    private String gender;
 
     public int getAge() {
         return age;

@@ -72,7 +72,8 @@ public class UserController {
     }
 
     @RequestMapping("/original/find")
-    public User getUser(){
+    public @ResponseBody User getUser(){
         return userService.getUser();
     }
+
 }
