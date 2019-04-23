@@ -15,73 +15,40 @@
     enabled. Please enable
     Javascript and reload this page!</h2></noscript>
 <div id="main-content" class="container">
-    <br/>
     <div class="row">
-        <div class="col-md-12">
-            <form class="form-inline" action="/login" method="post">
+        <div class="col-md-6">
+            <form class="form-inline">
                 <div class="form-group">
-                    <label for="connect">用户名：</label>
-                    <div class="input-group">
-                        <input type="text" name="username" id="username" class="form-control" placeholder="取个独特的名字吧" onfocus="this.value=''">
-                        <span class="input-group-btn">
-          <button id="connect" class="btn btn-default" type="submit">连接</button>
-          <button id="disconnect" class="btn btn-default" type="submit" disabled="disabled">断开
-          </button></span> </div>
+                    <label for="connect">WebSocket connection:</label>
+                    <button id="connect" class="btn btn-default" type="submit">Connect</button>
+                    <button id="disconnect" class="btn btn-default" type="submit" disabled="disabled">Disconnect
+                    </button>
                 </div>
             </form>
         </div>
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="name">What is your name?</label>
+                    <input type="text" id="name" class="form-control" placeholder="Your name here...">
+                </div>
+                <button id="send" class="btn btn-default" type="submit">Send</button>
+            </form>
+        </div>
     </div>
-    <br/><br/>
     <div class="row">
-        <div class="col-md-2">
-            <table id="userlist" class="table">
-                <thead onclick='javascript:hidetuser()'>
+        <div class="col-md-12">
+            <table id="conversation" class="table table-striped">
+                <thead>
                 <tr>
-                    <th>在线用户</th>
+                    <th>Greetings</th>
                 </tr>
                 </thead>
-                <tbody id="user" style="height:350px; overflow-y:auto;">
-                <tr onclick='javascript:touser(this)' id="robbot" class="机器人"><td>机器人<span class="badge pull-right">1</span></td></tr>
+                <tbody id="greetings">
                 </tbody>
             </table>
-        </div>
-        <div class="col-md-5">
-            <table id="conversation" class="table">
-                <thead onclick='javascript:hidetlobby()'>
-                <tr>
-                    <th id="lobbys">大厅聊天   (单击收起/展开)</th>
-                </tr>
-                </thead>
-                <tbody id="lobby" style="height:350px; overflow-y:auto; display:block">
-                </tbody>
-            </table>
-            <div class="input-group" style="height: 74px">
-                <textarea id="content" class="form-control" rows="3" style="resize: none;" placeholder="说点什么吧...."></textarea>
-                <span class="input-group-btn">
-        <button id="send" class="btn btn-default" type="submit" disabled="disabled" style="height: 100%">发送</button>
-        </span>
-            </div>
-        </div>
-        <div class="col-md-5">
-            <table id="privatechat" class="table">
-                <thead onclick='javascript:hidetprivate()'>
-                <tr>
-                    <th id="privateuser">私信聊天</th>
-                </tr>
-                </thead>
-                <tbody id="private" style="height:350px; overflow-y:auto; display:block; ">
-                <tr class="msg-机器人" hidden><td>00-00 00:00【机器人】对你说：欢迎你来到ocly的聊天室</td></tr>
-                </tbody>
-            </table>
-            <div class="input-group" style="height: 74px">
-                <textarea id="contentuser" class="form-control" rows="3" style="resize: none;" placeholder="单击一名在线用户，与其聊天吧...." ></textarea>
-                <span class="input-group-btn">
-        <button id="sendtouser" class="btn btn-default" type="submit" disabled="disabled" style="height: 100%">发送</button>
-        </span>
-            </div>
         </div>
     </div>
 </div>
-<br/>
 </body>
 </html>
