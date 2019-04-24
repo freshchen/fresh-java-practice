@@ -23,9 +23,6 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public Department addDepartment(Department department) {
-        departmentRepository.save(department);
-        Integer id = department.getId();
-        department.setName("1"+department.getName());
         return departmentRepository.save(department);
 
     }
