@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 /**
  * @program: fresh-java-framework
@@ -24,6 +25,12 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public Department addDepartment(Department department) {
         return departmentRepository.save(department);
-
     }
+
+    @Override
+    public List<Department> findAllDepartment() {
+        return departmentRepository.findAll();
+    }
+
+
 }

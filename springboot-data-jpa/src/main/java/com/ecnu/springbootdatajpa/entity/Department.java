@@ -2,8 +2,6 @@ package com.ecnu.springbootdatajpa.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * @program: fresh-java-framework
@@ -19,9 +17,6 @@ public class Department implements Serializable {
     private Integer id;
     @Column
     private String name;
-    // 与User的department属性对应，必须要加
-    @OneToMany(mappedBy = "department")
-    private Set <User> users = new HashSet <>();
 
     //JPA要求空构造函数
     public Department() {
@@ -41,13 +36,5 @@ public class Department implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Set <User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(Set <User> users) {
-        this.users = users;
     }
 }

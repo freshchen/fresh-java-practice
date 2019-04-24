@@ -26,10 +26,9 @@ public class User implements Serializable {
     private String name;
     @Column(name = "create_time")
     private Date createTime;
-    // 多对以关系，多个User对应一个部门，申明外键
-    @ManyToOne
-    @JoinColumn(name = "department_id")
-    private Department department;
+
+    @Column(name = "department_id")
+    private Integer departmentId;
 
     public Integer getId() {
         return id;
@@ -55,11 +54,11 @@ public class User implements Serializable {
         this.createTime = createTime;
     }
 
-    public Department getDepartment() {
-        return department;
+    public Integer getDepartmentId() {
+        return departmentId;
     }
 
-    public void setDepartment(Department department) {
-        this.department = department;
+    public void setDepartmentId(Integer departmentId) {
+        this.departmentId = departmentId;
     }
 }

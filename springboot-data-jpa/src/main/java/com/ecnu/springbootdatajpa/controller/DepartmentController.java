@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * @program: fresh-java-framework
  * @Date: 2019/4/24 0:46
@@ -27,6 +29,9 @@ public class DepartmentController {
         departmentService.addDepartment(department);
     }
 
-
+    @RequestMapping("/find")
+    public List<Department> findAll(){
+        return departmentService.findAllDepartment();
+    }
 
 }
