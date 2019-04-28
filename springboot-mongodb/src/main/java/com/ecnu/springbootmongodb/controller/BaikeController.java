@@ -21,7 +21,7 @@ public class BaikeController {
     @Autowired
     private BaikeDaoImpl baikeDao;
 
-    /**
+    /** curl http://localhost:27017/api/mongo/addbaike -X POST -H "Content-Type:application/json" -d '"desc":"comewords","comment":"articleContent","tag":"doc"'
      * @param baike
      * @return
      */
