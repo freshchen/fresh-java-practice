@@ -1,0 +1,9 @@
+server:
+  port: 8099
+#\u5173\u95ED\u6CE8\u518C\u4E2D\u5FC3\u670D\u52A1\u7AEF\u5C06\u81EA\u5DF1\u4F5C\u4E3A\u5BA2\u6237\u7AEF\u5C1D\u8BD5\u6CE8\u518C
+eureka:
+  instance:
+    hostname: "localhost"
+  client:
+    register-with-eureka: false
+    fetch-registry: false

@@ -1,0 +1,13 @@
+server:
+  port: 8081
+
+#自定义info
+#打开所有内置监控
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+info:
+  - app_name: "actuator"
+  - app_tag: "rap"

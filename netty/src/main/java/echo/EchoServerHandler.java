@@ -16,7 +16,6 @@ import lombok.extern.slf4j.Slf4j;
  * @Description
  */
 @Slf4j
-// ????Channel-handler?????channel?????
 @ChannelHandler.Sharable
 public class EchoServerHandler extends ChannelInboundHandlerAdapter {
 
@@ -27,11 +26,6 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter {
         ctx.write(input);
     }
 
-    /**
-     * ??????????????????Channel
-     * @param ctx
-     * @throws Exception
-     */
     @Override
     public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
         ctx.writeAndFlush(Unpooled.EMPTY_BUFFER).addListener(ChannelFutureListener.CLOSE);
