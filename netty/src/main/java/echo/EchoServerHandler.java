@@ -16,6 +16,7 @@ import lombok.extern.slf4j.Slf4j;
  * @Description
  */
 @Slf4j
+// 使得可以被多个channel安全的共享
 @ChannelHandler.Sharable
 public class EchoServerHandler extends ChannelInboundHandlerAdapter {
 
