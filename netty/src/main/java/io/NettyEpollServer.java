@@ -6,14 +6,11 @@ import io.netty.buffer.Unpooled;
 import io.netty.channel.*;
 import io.netty.channel.epoll.EpollEventLoopGroup;
 import io.netty.channel.epoll.EpollServerSocketChannel;
-import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
-import io.netty.channel.socket.nio.NioServerSocketChannel;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
-import java.nio.charset.Charset;
 
 /**
  * @anthor LingChen
@@ -24,7 +21,7 @@ import java.nio.charset.Charset;
 public class NettyEpollServer {
 
     public void server(int port) throws IOException, InterruptedException {
-        final ByteBuf buf = Unpooled.unreleasableBuffer(Unpooled.copiedBuffer("Hi!\r\nI am fresh".getBytes(Charset.forName("UTF-8"))));
+        final ByteBuf buf = Unpooled.unreleasableBuffer(Unpooled.copiedBuffer("Hi! I am fresh".getBytes()));
         EpollEventLoopGroup group = new EpollEventLoopGroup();
         try {
             ServerBootstrap serverBootstrap = new ServerBootstrap();

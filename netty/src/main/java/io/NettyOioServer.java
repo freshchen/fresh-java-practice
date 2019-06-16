@@ -11,7 +11,6 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
-import java.nio.charset.Charset;
 
 /**
  * @anthor LingChen
@@ -22,7 +21,7 @@ import java.nio.charset.Charset;
 public class NettyOioServer {
 
     public void server(int port) throws IOException, InterruptedException {
-        final ByteBuf buf = Unpooled.unreleasableBuffer(Unpooled.copiedBuffer("Hi!\r\nI am fresh".getBytes(Charset.forName("UTF-8"))));
+        final ByteBuf buf = Unpooled.unreleasableBuffer(Unpooled.copiedBuffer("Hi!\r\nI am fresh".getBytes()));
         // 已经被遗弃
         EventLoopGroup group = new OioEventLoopGroup();
         try {
