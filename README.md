@@ -1,7 +1,7 @@
 # fresh-java-practice
 ### core-java
 
-语法  反射  多线程  Lambda表达式 Stream编程 Socket网络编程
+泛型  反射  多线程  Lambda表达式 Stream编程 Socket网络编程
 
 ### others
 
