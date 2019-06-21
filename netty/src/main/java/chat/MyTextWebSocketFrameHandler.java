@@ -15,21 +15,23 @@ public class MyTextWebSocketFrameHandler extends SimpleChannelInboundHandler<Tex
 
     private final ChannelGroup group;
 
-    public MyTextWebSocketFrameHandler(ChannelGroup group) {\
+    public MyTextWebSocketFrameHandler(ChannelGroup group) {
         this.group = group;
     }
 
     @Override
     public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
-        if (evt == WebSocketServerProtocolHandler.ServerHandshakeStateEvent.HANDSHAKE_COMPLETE){
-
+        if (evt == WebSocketServerProtocolHandler.ServerHandshakeStateEvent.HANDSHAKE_COMPLETE) {
+            ctx.pipeline().remove(MyHttpRequestHandler.class);
+            group.writeAndFlush(new TextWebSocketFrame("Client: " + ctx.channel() + " joined!"));
+            group.add(ctx.channel());
+        } else {
+            super.userEventTriggered(ctx, evt);
         }
-
-        super.userEventTriggered(ctx, evt);
     }
 
     @Override
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, TextWebSocketFrame textWebSocketFrame) throws Exception {
-
+        group.writeAndFlush(textWebSocketFrame.retain());
     }
 }
