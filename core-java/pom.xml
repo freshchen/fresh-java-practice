@@ -6,7 +6,11 @@
 
     <groupId>com.ecnu</groupId>
     <artifactId>core-java</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>effective3</module>
+    </modules>
 
     <dependencies>
         <dependency>
