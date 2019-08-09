@@ -5,6 +5,7 @@ import java.lang.reflect.Array;
 import java.math.BigInteger;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.Instant;
 import java.util.Date;
 import java.util.LinkedList;
@@ -15,6 +16,7 @@ import java.util.LinkedList;
  * @Author: Ling Chen
  * @Description: 尽量使用简单工厂方法代替工造方法
  */
+@SuppressWarnings("all")
 public class StaticFactory {
     public static void main(String[] args) throws IOException {
         Date.from(Instant.EPOCH);
@@ -24,7 +26,7 @@ public class StaticFactory {
          * 每次返回新实例
          */
         Array.newInstance(LinkedList.class, 12);
-        Files.getFileStore(Path.of("/var/data/file.txt"));
+        Files.getFileStore(Paths.get("/var/data/file.txt"));
 
     }
 }
