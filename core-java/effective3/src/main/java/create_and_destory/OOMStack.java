@@ -1,7 +1,5 @@
 package create_and_destory;
 
-import java.util.Stack;
-
 /**
  * @anthor LingChen
  * @create 8/9/2019 2:53 PM
