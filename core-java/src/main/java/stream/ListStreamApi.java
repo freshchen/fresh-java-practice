@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
  * @Author: Ling Chen
  * @Description:
  */
-public class StreamApi {
+public class ListStreamApi {
     public static void main(String[] args) {
         List<String> list = new ArrayList<>();
         list.add("yo");
