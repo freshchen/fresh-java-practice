@@ -3,10 +3,7 @@ package concurrency;
 import lombok.extern.slf4j.Slf4j;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Semaphore;
+import java.util.concurrent.*;
 
 /**
  * @anthor LingChen
@@ -52,7 +49,21 @@ public class MockConcurrency {
         } catch (InterruptedException e) {
             log.error("InterruptedException: {}", e);
         }
-        executorService.shutdown();
+
+        try {
+            log.info("attempt to shutdown executor");
+            executorService.shutdown();
+            executorService.awaitTermination(5, TimeUnit.SECONDS);
+        }
+        catch (InterruptedException e) {
+            log.error("tasks interrupted");
+        } finally {
+            if (!executorService.isTerminated()) {
+                log.info("cancel non-finished tasks");
+            }
+            executorService.shutdownNow();
+            log.info("shutdown finished");
+        }
     }
 
 }
