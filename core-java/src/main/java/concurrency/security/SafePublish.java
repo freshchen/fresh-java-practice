@@ -16,20 +16,20 @@ import concurrency.annoations.ThreadSafe;
  */
 @ThreadSafe
 public class SafePublish {
-
-    private SafePublish() {
-    }
-
+    // volatile 防指令重排
     private volatile static SafePublish instance = null;
 
     public static SafePublish getInstance() {
         if (instance == null) {
             synchronized (SafePublish.class) {
-                if (instance == null){
+                if (instance == null) {
                     instance = new SafePublish();
                 }
             }
         }
         return instance;
+    }
+
+    private SafePublish() {
     }
 }

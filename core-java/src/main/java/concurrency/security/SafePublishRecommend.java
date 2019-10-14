@@ -11,9 +11,6 @@ import concurrency.annoations.ThreadSafe;
 @ThreadSafe
 public class SafePublishRecommend {
 
-    private SafePublishRecommend() {
-    }
-
     public static SafePublishRecommend getInstance(){
         return Singleton.INSTANCE.getInstance();
     }
@@ -28,5 +25,8 @@ public class SafePublishRecommend {
         public SafePublishRecommend getInstance(){
             return safePublishRecommend;
         }
+    }
+
+    private SafePublishRecommend() {
     }
 }
