@@ -65,7 +65,7 @@ public class CountDownLatchTest {
 
     public static void main(String[] args) {
         CountDownLatchTest test = new CountDownLatchTest();
-        //test.usage1();
-        test.usage2();
+        test.usage1();
+//        test.usage2();
     }
 }
