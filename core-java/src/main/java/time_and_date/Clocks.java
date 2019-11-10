@@ -1,8 +1,6 @@
 package time_and_date;
 
 import java.time.Clock;
-import java.time.Instant;
-import java.util.Date;
 
 /**
  * @anthor LingChen
@@ -15,9 +13,8 @@ public class Clocks {
         Clock clock = Clock.systemDefaultZone();
         System.out.println(clock.millis());
 
-        Instant instant = clock.instant();
-
-        Date date = Date.from(instant);
+        String  instant = clock.instant().toString();
+        System.out.println(instant);
 
     }
 }
