@@ -15,7 +15,6 @@ public class MapApi {
         map.put(1, "one");
         map.put(2, "two");
         map.put(3, "three");
-
         // 使用forEach()结合Lambda表达式迭代Map
         map.forEach((k, v) -> System.out.println("key: " + k + " value: " + v));
         // 查询Map中指定的值，不存在时使用默认值

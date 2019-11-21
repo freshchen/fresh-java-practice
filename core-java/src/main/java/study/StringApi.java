@@ -1,4 +1,4 @@
-package string;
+package study;
 
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;

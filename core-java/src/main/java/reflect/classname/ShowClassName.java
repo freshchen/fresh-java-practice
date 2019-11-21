@@ -23,5 +23,7 @@ public class ShowClassName {
         System.out.println("Class name is:  " + demo1.getName());
         System.out.println("Class name is:  " + demo2.getName());
         System.out.println("Class name is:  " + demo3.getName());
+
+        System.out.println("Class Simple name is:  " + demo1.getSimpleName());
     }
 }

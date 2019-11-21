@@ -15,7 +15,7 @@ public enum PayrolDay {
     SATURDAY(PayType.WEEKDEND),
     SUNDAY(PayType.WEEKDEND);
 
-    private final PayType payType;
+    private final   payType;
 
     public int pay(int minsWorked, int payRate){
         return payType.pay(minsWorked, payRate);

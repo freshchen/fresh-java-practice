@@ -8,7 +8,7 @@ package helloworld
   */
 object hello {
   def main(args: Array[String]): Unit = {
-    println("Hello World")
+    2 to 6 foreach{ n=> println(s"Hello ${n} bottles of beer") }
   }
 
 }
