@@ -44,6 +44,15 @@ public class Test {
         }
     }
 
+    public static void annotation(Class clz) {
+        System.out.println("########## constructor  ##########");
+
+        Constructor[] constructors = clz.getConstructors();
+        for (Constructor c : constructors) {
+            System.out.println(c.toString());
+        }
+    }
+
     public static void main(String[] args) throws ClassNotFoundException {
         Class clz = Person.class;
         Test.name(clz);
@@ -51,5 +60,10 @@ public class Test {
         Test.pkg(clz);
         Test.constructor(clz);
 
+
+        String[] strings = new String[3];
+        Class stringArrayClass = strings.getClass();
+        Class stringArrayComponentType = stringArrayClass.getComponentType();
+        System.out.println(stringArrayComponentType);
     }
 }
