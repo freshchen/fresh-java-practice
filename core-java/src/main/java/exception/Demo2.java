@@ -27,7 +27,7 @@ public class Demo2 {
     }
 
     public static void main(String[] args) {
-        Demo2.printSecondLetter("1");
+//        Demo2.printSecondLetter("1");
         Demo2.printSecondLetter1("1");
     }
 }
