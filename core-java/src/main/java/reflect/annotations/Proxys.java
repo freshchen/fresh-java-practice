@@ -22,17 +22,25 @@ public class Proxys implements InvocationHandler {
         String methodName = method.getName();
         if (this.target instanceof Person) {
             Person person = (Person) this.target;
-            if (person.getClass().getDeclaredField("name").isAnnotationPresent(Chinese.class)){
-                if (Objects.nonNull(person.getName()) && !person.getName().matches("[\\u4E00-\\u9FA5]+")) {
+            // 判断Person类，name字段有没有加Chinese注解
+            if (person.getClass()
+                    .getDeclaredField("name")
+                    .isAnnotationPresent(Chinese.class)) {
+                // 判断名字是不是汉字
+                if (Objects.nonNull(person.getName()) &&
+                        !person.getName().matches("[\\u4E00-\\u9FA5]+")) {
                     throw new IllegalArgumentException("Person Name is not chinese");
                 }
             }
             Method targetMethod = person.getClass().getMethod(methodName);
             if ("order".equals(methodName)) {
+                // 拦截接口实现类中order方法判断是否有Hello注解
                 if (targetMethod.isAnnotationPresent(Hello.class)) {
-                    System.out.println("服务员你好," + targetMethod.getAnnotation(Hello.class).value());
-                } else if (method.isAnnotationPresent(Hello.class)) {
-                    System.out.println("服务员你好," + method.getAnnotation(Hello.class).value());
+                    System.out.println("你好," +
+                            targetMethod.getAnnotation(Hello.class).value());
+                } else if (method.isAnnotationPresent(Hello.class)) { // 拦截接口中order方法判断是否有Hello注解
+                    System.out.println("你好," +
+                            method.getAnnotation(Hello.class).value());
                 }
                 return method.invoke(this.target, args);
             }
