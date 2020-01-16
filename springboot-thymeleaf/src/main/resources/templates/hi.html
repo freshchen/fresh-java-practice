@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+<div>
+    <h4>th:test</h4>
+    <span th:text="${hello}">默认1</span>
+    <span th:text="'11111' + ${hello}"></span>
+    <span th:text="|1111122 ${hello} !!!|"></span>
+</div>
+<div>
+    <h4>th:utest</h4>
+    <p th:utext="${hello}">默认1</p>
+</div>
+<div th:object="${user}">
+    <h4>* with object</h4>
+    <span th:text="*{name}">默认2</span>
+    <span th:text="*{age}">默认3</span>
+</div>
+<div>
+    <h4>* without object</h4>
+    <span th:text="*{user.name}">默认2</span>
+    <span th:text="*{user.age}">默认3</span>
+</div>
+<div>
+    <h4>th:href</h4>
+    <a th:href="@{../{u}(u=${url})}">默认4</a>
+</div>
+<div>
+    <h4>th:if th:unless</h4>
+    <div th:if="${boolean} == 0">
+        <p>th:if</p>
+    </div>
+    <div th:unless="${boolean} == 0">
+        <p>th:unless</p>
+    </div>
+</div>
+<div>
+    <h4>th:each</h4>
+    <ul>
+        <li th:each="name:${names}" th:text="${name}">user name</li>
+    </ul>
+</div>
+</body>
+</html>
