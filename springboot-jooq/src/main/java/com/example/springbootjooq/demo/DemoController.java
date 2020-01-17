@@ -1,14 +1,12 @@
 package com.example.springbootjooq.demo;
 
 import com.example.springbootjooq.generated.tables.pojos.User;
-import org.jooq.DSLContext;
-import org.jooq.Result;
-import org.jooq.impl.DSL;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * @author chenling
@@ -35,8 +33,13 @@ public class DemoController {
         service.delete(id);
     }
 
-    @GetMapping("/select/user/{id}")
+    @RequestMapping("/select/user/{id}")
     public User selectByID(@PathVariable Integer id){
         return service.selectById(id);
+    }
+
+    @RequestMapping("/select/user/")
+    public List<User> selectByID(){
+        return service.selectAll();
     }
 }

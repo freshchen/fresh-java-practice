@@ -5,6 +5,7 @@ import com.example.springbootjooq.generated.tables.pojos.User;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * @author chenling
@@ -22,5 +23,5 @@ public interface DemoService {
     /** 查询单个*/
     public User selectById(int id);
     /** 查询全部列表*/
-    public Iterator<User> selectAll(int pageNum, int pageSize);
+    public List<User> selectAll();
 }

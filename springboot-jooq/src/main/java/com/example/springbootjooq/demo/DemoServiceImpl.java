@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Iterator;
+import java.util.List;
 
 @Service
 public class DemoServiceImpl implements DemoService {
@@ -43,7 +44,7 @@ public class DemoServiceImpl implements DemoService {
     }
 
     @Override
-    public Iterator<User> selectAll(int pageNum, int pageSize) {
-        return null;
+    public List<User> selectAll() {
+        return create.select().from(USER).fetchInto(User.class);
     }
 }
