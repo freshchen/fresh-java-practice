@@ -5,8 +5,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-import java.util.concurrent.ConcurrentHashMap;
-
 @SpringBootApplication
 public class SpringbootCoreApplication {
 
@@ -14,7 +12,6 @@ public class SpringbootCoreApplication {
         ApplicationContext context = SpringApplication.run(SpringbootCoreApplication.class, args);
         Person person = context.getBean("person", Person.class);
         person.order();
-        ConcurrentHashMap
     }
 
     /**
