@@ -6,6 +6,8 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -18,17 +20,29 @@ public class DemoController {
 
     @GetMapping("/hello")
     @ApiOperation("打招呼")
-    public String hello(){
+    public String hello() {
         return "Hello World";
     }
 
-    @GetMapping("/user")
-    @ApiOperation("获取用户信息")
+    @GetMapping("/test/user")
+    @ApiOperation("参数新增用户信息")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "name", value = "姓名"),
-            @ApiImplicitParam(name = "age", value = "年龄")
+            @ApiImplicitParam(name = "name", value = "姓名", dataType = "String", paramType = "query"),
+            @ApiImplicitParam(name = "age", value = "年龄", dataType = "Integer", paramType = "query")
     })
-    public User user(String name, Integer age){
-        return new User("wang");
+    public void user(String name, Integer age) {
+    }
+
+    @PostMapping("/user")
+    @ApiOperation("Body新增用户")
+    public Integer addUser(@RequestBody User user){
+        System.out.println(user);
+        return 0;
+    }
+
+    @GetMapping("/user")
+    @ApiOperation("Body查询用户")
+    public User queryUser(){
+        return new User("hello", 22);
     }
 }
