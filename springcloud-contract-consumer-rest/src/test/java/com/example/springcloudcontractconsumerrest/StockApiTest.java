@@ -24,8 +24,10 @@ import java.io.IOException;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
-@AutoConfigureStubRunner(ids = {"com.example:springcloud-contract-provider-rest:+:stubs:8880"},
-        stubsMode = StubRunnerProperties.StubsMode.LOCAL)
+@AutoConfigureStubRunner(
+        ids = {"com.example:springcloud-contract-provider-rest:+:stubs:8880"},
+        stubsMode = StubRunnerProperties.StubsMode.LOCAL
+)
 public class StockApiTest {
 
     @Autowired

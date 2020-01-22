@@ -40,12 +40,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-<!--            <exclusions>-->
-<!--                <exclusion>-->
-<!--                    <groupId>org.junit.vintage</groupId>-->
-<!--                    <artifactId>junit-vintage-engine</artifactId>-->
-<!--                </exclusion>-->
-<!--            </exclusions>-->
+            <!--            <exclusions>-->
+            <!--                <exclusion>-->
+            <!--                    <groupId>org.junit.vintage</groupId>-->
+            <!--                    <artifactId>junit-vintage-engine</artifactId>-->
+            <!--                </exclusion>-->
+            <!--            </exclusions>-->
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -80,7 +80,10 @@
                 <version>2.2.1.RELEASE</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <baseClassForTests>com.example.springcloudcontractproviderrest.RestBaseCase</baseClassForTests>
+                    <!--用于构建过程中插件自动生成测试用例的基类-->
+                    <baseClassForTests>
+                        com.example.springcloudcontractproviderrest.RestBaseCase
+                    </baseClassForTests>
                 </configuration>
             </plugin>
             <plugin>
