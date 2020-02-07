@@ -11,6 +11,7 @@ public class SpringcloudContractRestProviderApplicationTests {
 
     @Test
     void contextLoads() {
+
     }
 
 }
