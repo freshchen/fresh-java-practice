@@ -11,6 +11,7 @@
     <modules>
         <module>effective3</module>
         <module>java8</module>
+        <module>java11</module>
     </modules>
 
     <dependencies>
