@@ -18,5 +18,7 @@ public class OneDay {
         work.writeProgram();
         work.setTime(15);
         work.writeProgram();
+        work.setTime(10);
+        work.writeProgram();
     }
 }

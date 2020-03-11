@@ -11,6 +11,9 @@ public class AfternoonState implements State{
     public void writeProgram(Work work) {
         if (work.getTime() >= 13 && work.getTime() < 18){
             System.out.println("current time " + work.getTime() + " fighting !");
+        }else {
+            work.setCurrentState(new ForenoonState());
+            work.writeProgram();
         }
     }
 }
