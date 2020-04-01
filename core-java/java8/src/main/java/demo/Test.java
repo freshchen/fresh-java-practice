@@ -1,10 +1,7 @@
 package demo;
 
-import com.google.common.collect.Sets;
-
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
-import java.util.HashSet;
 
 /**
  * @author darcy
@@ -56,13 +53,14 @@ public class Test {
 //        OO oo = new OO(VV.KE2);
 //        System.out.println(oo.getV().getName());'
 
-        HashSet<Long> objects = Sets.newHashSet();
-        objects.add(1L);
-        objects.add(2L);
-        objects.add(1L);
-
-        System.out.println(objects);
-
+//        HashSet<Long> objects = Sets.newHashSet();
+//        objects.add(1L);
+//        objects.add(2L);
+//        objects.add(1L);
+//
+//        System.out.println(objects);
+//        long l = OffsetDateTimeDateTime.now().toInstant().toEpochMilli();
+        System.out.println(System.currentTimeMillis());
     }
 
 }
