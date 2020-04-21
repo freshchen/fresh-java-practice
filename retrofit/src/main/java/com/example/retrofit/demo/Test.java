@@ -4,6 +4,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import java.io.IOException;
+import java.time.OffsetDateTime;
+
 public class Test {
 
     public static void case1() {
@@ -26,7 +29,7 @@ public class Test {
 
     public static void case2() {
         DemoService service = DemoService.getInstance();
-        Call<Integer> get = service.addUser(new User("zzzz", 111));
+        Call<Integer> get = service.addUser(new User());
         get.enqueue(new Callback<Integer>() {
             @Override
             public void onResponse(Call<Integer> call, Response<Integer> response) {
@@ -57,7 +60,7 @@ public class Test {
 
     public static void case4() {
         DemoService service = DemoService.getInstance();
-        Call<Integer> get = service.addUser(new User("zzzz", 111));
+        Call<Integer> get = service.addUser(new User());
         get.enqueue(new CallbackFunction.Builder<Integer>()
                 .onResponse(((call, response) -> {
                     if (response.code() == 200) {
@@ -70,10 +73,24 @@ public class Test {
         );
     }
 
-    public static void main(String[] args) {
-        Test.case1();
-        Test.case2();
-        Test.case3();
-        Test.case4();
+
+    public static void case5() throws IOException {
+        DemoService service = DemoService.getInstance();
+        User user = new User();
+        user.setName("wang");
+        user.setAge(11);
+        user.setStartTime(java.util.Optional.of(OffsetDateTime.now()));
+        user.setEndTime(java.util.Optional.of(OffsetDateTime.now()));
+        Call<Integer> get = service.addUser(user);
+        Response<Integer> execute = get.execute();
+        System.out.println(execute);
+    }
+
+    public static void main(String[] args) throws IOException {
+//        Test.case1();
+//        Test.case2();
+//        Test.case3();
+//        Test.case4();
+        Test.case5();
     }
 }

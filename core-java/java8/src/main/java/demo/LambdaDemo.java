@@ -2,6 +2,7 @@ package demo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.TestData;
 import lombok.NoArgsConstructor;
 
 import java.util.function.Consumer;

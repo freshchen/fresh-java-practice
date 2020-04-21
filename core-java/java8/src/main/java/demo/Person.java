@@ -2,6 +2,7 @@ package demo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.TestData;
 
 /**
  * @author darcy

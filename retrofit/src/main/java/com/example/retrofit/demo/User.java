@@ -1,41 +1,26 @@
 package com.example.retrofit.demo;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.OffsetDateTime;
+import java.util.Optional;
+
+@Data
+@NoArgsConstructor
 public class User {
 
-    public User(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                '}';
-    }
+    private String name;
+    private Integer age;
 
     /**
-     * name : hello
-     * age : 22
+     * 开始时间
      */
+    private Optional<OffsetDateTime> startTime = Optional.empty();
 
-    private String name;
-    private int age;
+    /**
+     * 结束时间
+     */
+    private Optional<OffsetDateTime> endTime = Optional.empty();
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 }
