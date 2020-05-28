@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    stream:
+      binders:
+        defaultRabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: localhost
+                port: 31003
+                username: guest
+                password: guest
+                virtual-host: /
+      bindings:
+        get-in-0:
+          destination: get
+      function:
+        definition: get
