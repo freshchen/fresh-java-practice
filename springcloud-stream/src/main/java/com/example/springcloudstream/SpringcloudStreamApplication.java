@@ -4,7 +4,6 @@ import lombok.Data;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -20,9 +19,18 @@ public class SpringcloudStreamApplication {
     }
 
     @Bean
-    public Consumer<Person> get() {
+    public Function<Person, Person> get() {
         return person -> {
-            System.out.println("Received: " + person);
+            System.out.println("get Received: " + person);
+            person.setName(person.getName().toUpperCase());
+            return person;
+        };
+    }
+
+    @Bean
+    public Consumer<Person> get2() {
+        return person -> {
+            System.out.println("get2 Received: " + person);
         };
     }
 

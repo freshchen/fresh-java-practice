@@ -14,6 +14,10 @@ spring:
                 virtual-host: /
       bindings:
         get-in-0:
-          destination: get
+          destination: input
+        get-out-0:
+          destination: output
+        get2-in-0:
+          destination: output
       function:
-        definition: get
+        definition: get;get2
