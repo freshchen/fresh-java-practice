@@ -11,7 +11,7 @@
     <groupId>com.github.freshchen</groupId>
     <artifactId>springcloud-stream</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springcloud-openfeign</name>
+    <name>springcloud-stream</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -23,14 +23,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>

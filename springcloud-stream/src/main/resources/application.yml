@@ -1,8 +1,9 @@
 spring:
   cloud:
     stream:
+#     配置消息中间件信息
       binders:
-        defaultRabbit:
+        myLocalRabbit:
           type: rabbit
           environment:
             spring:
@@ -12,12 +13,16 @@ spring:
                 username: guest
                 password: guest
                 virtual-host: /
+#     重点，如何绑定通道，这里有个约定，开头是函数名，in表示消费消息，out表示生产消息，最后的数字是函数接受的参数的位置，destination后面为订阅的主题
+#     比如Function<Tuple2<Flux<String>, Flux<Integer>>, Flux<String>> gather()
+#     gather函数接受的第一个String参数对应 gather-in-0，第二个Integer参数对应 gather-in-1，输出对应 gather-out-0
       bindings:
-        get-in-0:
-          destination: input
-        get-out-0:
-          destination: output
-        get2-in-0:
-          destination: output
+        inventory-in-0:
+          destination: inventory
+        inventory-out-0:
+          destination: report
+        report-in-0:
+          destination: report
+#     注册声明的三个函数
       function:
-        definition: get;get2
+        definition: inventory;report
