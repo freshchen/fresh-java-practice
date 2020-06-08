@@ -1,10 +1,10 @@
-package com.github.freshchen.springbootcore.entity;
+package com.github.freshchen.springbootcore.aop;
 
-import com.github.freshchen.springbootcore.annotation.Chinese;
-import com.github.freshchen.springbootcore.annotation.Hello;
-import com.github.freshchen.springbootcore.service.Action;
 import org.springframework.stereotype.Component;
 
+/**
+ * @author freshchen
+ */
 @Component
 public class Person implements Action {
 

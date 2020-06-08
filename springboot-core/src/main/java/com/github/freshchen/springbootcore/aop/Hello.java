@@ -1,4 +1,4 @@
-package com.github.freshchen.springbootcore.annotation;
+package com.github.freshchen.springbootcore.aop;
 
 import java.lang.annotation.*;
 

@@ -1,4 +1,4 @@
-package com.github.freshchen.springbootcore.service;
+package com.github.freshchen.springbootcore.aop;
 
 /**
  * @author : freshchen

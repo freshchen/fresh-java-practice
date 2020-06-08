@@ -1,6 +1,5 @@
 package com.github.freshchen.springbootcore.aop;
 
-import com.github.freshchen.springbootcore.annotation.Hello;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -14,7 +13,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class HelloAspect {
 
-    @Pointcut("@annotation(com.github.freshchen.springbootcore.annotation.Hello)")
+    @Pointcut("@annotation(com.github.freshchen.springbootcore.aop.Hello)")
     private void pointcut(){}
 
     @Before("pointcut() && @annotation(hello)")
