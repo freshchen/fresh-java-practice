@@ -1,4 +1,4 @@
-package com.example.springbootsecurity;
+package com.example.springbootsecurity.controller;
 
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
