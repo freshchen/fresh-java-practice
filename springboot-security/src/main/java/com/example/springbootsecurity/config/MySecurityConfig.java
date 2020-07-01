@@ -19,7 +19,7 @@ import org.springframework.security.web.session.HttpSessionEventPublisher;
  * @since 2020/06/16
  **/
 @EnableWebSecurity
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
+public class MySecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private MyWebAuthDetailsSource myWebAuthDetailsSource;

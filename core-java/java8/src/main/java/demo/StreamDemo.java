@@ -130,8 +130,7 @@ public class StreamDemo {
     }
 
     public static void main(String[] args) throws IOException {
-        System.out.println(Lists.newArrayList("1", "2", "1", "2", "1", "2", "11", "2", "1", "22", "1", "2", "1", "2").parallelStream().collect(StreamDemo.toRepeatList()));
-
+//        System.out.println(Lists.newArrayList("1", "2", "1", "2", "1", "2", "11", "2", "1", "22", "1", "2", "1", "2").parallelStream().collect(StreamDemo.toRepeatList()));
 //        System.out.println(Stream.of(",123,asd,asd,".split(",")).collect(Collectors.toList()));
     }
 //        Utils.invokeAllCases(StreamDemo.class);
