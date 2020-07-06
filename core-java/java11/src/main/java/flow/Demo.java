@@ -1,5 +1,7 @@
 package flow;
 
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.util.concurrent.Flow;
 import java.util.concurrent.SubmissionPublisher;
 import java.util.stream.IntStream;
@@ -13,6 +15,7 @@ public class Demo {
         SubmissionPublisher<Integer> feed = new SubmissionPublisher<>();
         feed.subscribe(new Flow.Subscriber<>() {
             private Flow.Subscription subscription;
+
             @Override
             public void onSubscribe(Flow.Subscription subscription) {
                 this.subscription = subscription;
@@ -36,7 +39,7 @@ public class Demo {
             }
         });
 
-        IntStream.range(0,20).forEach(feed::submit);
+        IntStream.range(0, 20).forEach(feed::submit);
 
         Thread.sleep(0x457);
 

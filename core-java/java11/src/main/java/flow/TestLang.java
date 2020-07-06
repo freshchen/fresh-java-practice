@@ -78,8 +78,22 @@ public class TestLang {
         Optional<Object> or = Optional.ofNullable(null).or(() -> Optional.ofNullable(1));
         System.out.println(or);
 
-        System.out.println("###### Optional or");
-        Optional.ofNullable(null).orElseThrow();
+        System.out.println("###### Optional orElseThrow");
+//        Optional.ofNullable(null).orElseThrow();
+
+
+        System.out.println("###### Optional ifPresentOrElse");
+        Optional.ofNullable(null).ifPresentOrElse(
+                (value) -> System.out.println(value),
+                () -> {
+                    try {
+                        Thread.sleep(1111);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println("in lambda");
+                });
+        System.out.println("in main");
     }
 
     public static void main(String[] args) {
