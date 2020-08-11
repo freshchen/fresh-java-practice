@@ -12,6 +12,7 @@ import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import static java.util.stream.Collector.Characteristics.UNORDERED;
 
@@ -130,6 +131,8 @@ public class StreamDemo {
     }
 
     public static void main(String[] args) throws IOException {
+        List<Object> collect = Lists.newArrayList().stream().map(Function.identity()).collect(Collectors.toList());
+        System.out.println(collect);
 //        System.out.println(Lists.newArrayList("1", "2", "1", "2", "1", "2", "11", "2", "1", "22", "1", "2", "1", "2").parallelStream().collect(StreamDemo.toRepeatList()));
 //        System.out.println(Stream.of(",123,asd,asd,".split(",")).collect(Collectors.toList()));
     }
