@@ -3,8 +3,6 @@ package flow;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.*;
-import java.util.function.Consumer;
-import java.util.function.Function;
 import java.util.function.Supplier;
 
 /**
@@ -28,6 +26,7 @@ public class MockConcurrency {
 
     public void mockSingle(Supplier supplier) {
         log.info("requestTotal: {} threadTotal: {}", requestTotal, threadTotal);
+        long time = System.currentTimeMillis();
         for (int i = 0; i < requestTotal; i++) {
             executorService.execute(() -> {
                 try {
@@ -59,6 +58,8 @@ public class MockConcurrency {
             executorService.shutdownNow();
             log.info("shutdown finished");
         }
+        long l = System.currentTimeMillis() - time;
+        System.out.println("耗时 " + l);
     }
 
 }
